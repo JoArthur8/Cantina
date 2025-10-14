@@ -1,0 +1,6 @@
+Ideias de template:
+
+https://bootstrapmade.com/restaurantly-restaurant-template/ -> site base
+https://bootstrapmade.com/savora-bootstrap-restaurant-template/ -> site base
+https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -> site base
+https://startbootstrap.com/theme/coming-soon -> tela de login/registro
