@@ -143,3 +143,18 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO Usuario (CPF, Nome, Email, Senha, Tipo_Usuario) VALUES
+('11122233344', 'João da Silva', 'joao.silva@aluno.com', 'senha_123', 'aluno'),
+('55566677788', 'Maria Oliveira', 'maria.adm@cantina.com', 'senha_456', 'administrador');
+
+INSERT INTO Item (Nome, Descricao, Preco, Tipo, Quantidade_Estoque) VALUES
+('Coxinha de Frango', 'Salgado com recheio de frango', 5.50, 'Salgado', 50),
+('Refrigerante Lata', 'Coca-Cola, Guaraná ou Fanta', 4.00, 'Bebida', 100),
+('Brigadeiro', 'Doce de chocolate tradicional', 2.50, 'Doce', 30);
+
+INSERT INTO Pedido (Usuario_CPF) VALUES ('11122233344');
+
+INSERT INTO Item_Pedido (Pedido_Cod_pedido, Item_Cod_item, Quantidade) VALUES
+(1, 1, 2), 
+(1, 2, 1);
