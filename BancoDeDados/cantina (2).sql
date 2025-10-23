@@ -65,9 +65,8 @@ CREATE TABLE `item_pedido` (
 --
 
 INSERT INTO `item_pedido` (`Quantidade`, `Pedido_Cod_pedido`, `Item_Cod_item`, `valor_total`) VALUES
-(2, 1, 1, '0.00'),
-(1, 1, 2, '0.00'),
-(0, NULL, NULL, '15.99');
+(2, 1, 1, '20.49'),
+(1, 1, 2, '15.99'),
 
 -- --------------------------------------------------------
 
