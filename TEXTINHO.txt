@@ -2,3 +2,10 @@ Templates:
 
 https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -> site base
 https://startbootstrap.com/theme/coming-soon -> tela de login/registro
+
+
+Login  (X)
+Página de Usuário ()
+Página de compra ()
+Página de Administração ()
+Página de marcar para qual dia vai ter a comida ()
