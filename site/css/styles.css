@@ -10917,7 +10917,7 @@ video.bg-video {
 @media (min-width: 992px) {
   .masthead {
     height: 100%;
-    width: 75vw;
+    width: 49vw;
     min-height: 0;
     padding-bottom: 0;
   }
@@ -10940,7 +10940,7 @@ video.bg-video {
 }
 @media (min-width: 1200px) {
   .masthead {
-    width: 65vw;
+    width: 49vw;
   }
 }
 .social-icons {

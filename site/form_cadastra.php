@@ -1,6 +1,3 @@
-<?php 
-    include 'pedaco.php';
-?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,7 +19,7 @@
 <body>
     <!-- Background Video-->
     <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="assets/mp4/bg.mp4" type="video/mp4" />
+        <source src="assets/mp4/cozinhar.mp4" type="video/mp4" />
     </video>
     <!-- Masthead-->
     <div class="masthead">
