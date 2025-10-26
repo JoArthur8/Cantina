@@ -1,0 +1,58 @@
+<div class="tab-header text-center">
+              <h3>Cardápio</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <?php 
+                include 'conexao.php'
+              ?> 
+
+              <div class="container">
+                  <table class="table table-dark table-striped">
+                      <thead>
+                          <tr>
+                              <th scope="col">NOME</th>
+                              <th scope="col">PREÇO</th>
+                              <th scope="col">TIPO</th>
+                              <!-- Fazer um modal com a descrição nos membros em descrição -->
+                              <th scope="col">DESCRIÇÀO</th> 
+
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php
+                              require 'conexao.php';
+                              $sql = "SELECT * FROM item";
+                              $stmt = $pdo->query($sql);
+                              while ($item = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                                  echo "<tr>";
+
+                                  echo "<td>". $item['Nome'] ."</td>";
+                                  echo "<td>". $item['Preco'] ."</td>";
+                                  echo "<td>". $item['Tipo'] ."</td>";
+                                  echo "<td>". $item['Descricao'] ."</td>";
+                                  // echo "
+                                  // <td>
+                                  //     <div class='btn-group' role='group'>
+                                  //         <a href='form_atualiza.php?id=". $item['Cod_item'] ."' type='button' class='btn btn-danger'>ATUALIZAR</a>
+                                  //         <a href='apagar.php?id=". $item['Cod_item'] ."' type='button' class='btn btn-warning'>APAGAR</a>
+                                  //     </div>
+                                  // </td>
+                                  // "
+                                  ;
+
+                                  echo "</tr>";
+
+                              }
+                          ?>
+                          
+                      </tbody>
+                  </table>
+                  
+                </div>
+              </div>
+            </div>
+
+      </div>

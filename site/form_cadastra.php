@@ -34,8 +34,15 @@
                     <div class="mb-3"> 
                         <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha">
                     </div>
+                    <div class="mb-3"> 
+                        <!-- Fazer depois seleção de Tipo -->            
+                        Tipo: <select name="tipo">
+                            <option value="0">Consumidor</option>
+                            <option value="1">Diretor de Cantina</option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    <a href="index.html" type="button" class="btn btn-danger">Voltar</a>
+                    <a href="index.php" type="button" class="btn btn-danger">Voltar</a>
                 </form>
             </div>
         </div>
