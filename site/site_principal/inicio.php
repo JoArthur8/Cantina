@@ -143,7 +143,7 @@
               <div class="col-xl-4">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-clipboard-data"></i>
-                  <h4>Corporis voluptates officia eiusmod</h4>
+                  <h4>Cardápio Variado</h4>
                   <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                 </div>
               </div><!-- End Icon Box -->
@@ -151,7 +151,7 @@
               <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-gem"></i>
-                  <h4>Ullamco laboris ladore lore pan</h4>
+                  <h4>Pedido Online Rápido</h4>
                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
                 </div>
               </div><!-- End Icon Box -->
@@ -159,7 +159,7 @@
               <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-inboxes"></i>
-                  <h4>Labore consequatur incidid dolore</h4>
+                  <h4>Pagamento Seguro</h4>
                   <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
                 </div>
               </div><!-- End Icon Box -->
@@ -176,7 +176,7 @@
     
     <!-- Menu Section -->
     <section id="menu" class="menu section">
-<!-- Por o conteúdo de AAAA.txt aqui: -->
+      <!-- Por o conteúdo de AAAA.txt aqui: -->
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Nosso Cardápio</h2>
@@ -191,7 +191,7 @@
           <div class="tab-pane fade active show" id="menu-starters">
 
             <div class="tab-header text-center">
-              <h3>Entradas</h3>
+              <h3>Menu</h3>
             </div>
 
             <div class="row gy-5">
