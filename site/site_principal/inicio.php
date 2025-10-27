@@ -53,6 +53,8 @@
           <li><a href="#hero" class="active">Início<br></a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#menu">Cardápio</a></li>
+          <li><a href="./carrinho.php">Carrinho</a></li>
+          <li><a href="#">Sair</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
