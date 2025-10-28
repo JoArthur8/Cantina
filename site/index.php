@@ -27,7 +27,6 @@
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
                     <h1 class="fst-italic lh-1 mb-4">Faça seu Login aqui:</h1>
-                    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ipsam expedita ad laudantium libero! Delectus repudiandae asperiores excepturi nam magni tempora dolores architecto ad, error obcaecati soluta, et quis ut!</p>
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * SB Forms Contact Form * *-->
                     <!-- * * * * * * * * * * * * * * *-->
@@ -38,10 +37,13 @@
                     <form action="checar.php" method="POST">
                         <!-- Email address input-->
                         <div class="mb-3"> 
-                            <input type="text" class="form-control" name="nome_usuario" placeholder="Digite o seu nome de usuário">
+                            <input type="text" class="form-control" name="nome_usuario" placeholder="Digite o seu nome de usuário" require>
                         </div>
                         <div class="mb-3"> 
-                            <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha">
+                            <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha" require>
+                        </div>
+                        <div class="mb-3"> 
+                            <input type="cpf" class="form-control" name="cpf" placeholder="Digite seu CPF" require>
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
 
