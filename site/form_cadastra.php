@@ -35,6 +35,9 @@
                         <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha">
                     </div>
                     <div class="mb-3"> 
+                    <input type="number" class="form-control" name="cpf" placeholder="Digite seu CPF" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+                    <div class="mb-3"> 
                         <!-- Fazer depois seleção de Tipo -->            
                         Tipo: <select name="tipo">
                             <option value="0">Consumidor</option>
