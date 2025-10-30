@@ -25,6 +25,31 @@
         <tbody id="cart-items">
             <!-- Os itens do carrinho vão ser inseridos aqui -->
         </tbody>
+
+        <?php
+            require 'conexao.php';
+
+            $sql = "SELECT * FROM item_pedido";
+            $stmt = $pdo->query($sql);
+
+            while ($item_pedido = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                    echo "<td>" . $item_pedido['Quantidade'] . "</td>";
+                    echo "<td>" . $item_pedido['Pedido_Cod_pedido'] . "</td>";
+                    echo "<td>" . $item_pedido['Item_Cod_Item'] . "</td>";
+                    echo "<td>" . $item_pedido['valor_total'] . "</td>";
+                    /* echo "
+                    <td>
+                        <div class='btn-group' role='group'>
+                            <a href='form_atualiza.php?id=" . $produto['id'] . "' type='button' class='btn btn-danger'>ATUALIZAR</a>
+                            <a href='apagar.php?id=" . $produto['id'] . "' type='button' class='btn btn-warning botaoapagar'>APAGAR</a>
+                        </div>
+                    </td>
+                    "; */
+                echo "</tr>";
+            }
+        ?>
+
     </table>
 
     <div class="total">
@@ -45,11 +70,7 @@
 
 <script>
     // só pro carrinho não ficar vazio (ai é só trocar ou tirar depois)
-    const carrinho = [
-        {nome: "Hambúrguer", quantidade: 2, preco: 12.50},
-        {nome: "Suco Natural", quantidade: 1, preco: 5.00},
-        {nome: "Batata Frita", quantidade: 3, preco: 8.00}
-    ];
+    
 
     function atualizarCarrinho() {
         const tbody = document.getElementById("cart-items");
