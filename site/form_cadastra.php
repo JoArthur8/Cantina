@@ -32,6 +32,9 @@
                         <input type="text" class="form-control" name="nome_usuario" placeholder="Digite o seu nome de usuário">
                     </div>  
                     <div class="mb-3"> 
+                        <input type="email" class="form-control" name="email" placeholder="Digite o seu email">
+                    </div> 
+                    <div class="mb-3"> 
                         <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha">
                     </div>
                     <div class="mb-3"> 

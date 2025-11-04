@@ -37,13 +37,13 @@
                     <form action="checar.php" method="POST">
                         <!-- Email address input-->
                         <div class="mb-3"> 
-                            <input type="text" class="form-control" name="nome_usuario" placeholder="Digite o seu nome de usuário" require>
+                            <input type="text" class="form-control" name="nome_usuario" placeholder="Digite o seu nome de usuário" required>
                         </div>
                         <div class="mb-3"> 
-                            <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha" require>
+                            <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha" required>
                         </div>
                         <div class="mb-3"> 
-                            <input type="number" class="form-control" name="cpf" placeholder="Digite seu CPF" require>
+                            <input type="number" class="form-control" name="cpf" placeholder="Digite seu CPF" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
 
