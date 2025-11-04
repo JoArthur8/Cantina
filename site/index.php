@@ -52,6 +52,7 @@
         <ul>
           <li><a href="#hero" class="active">Início<br></a></li>
           <li><a href="#about">Sobre</a></li>
+          <li><a href="login.php">Entrar</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

@@ -41,8 +41,8 @@ include '../pedaco.php'
                 echo "
                         <td>
                             <div class='btn-group' role='group'>
-                                <a href='form_atualiza.php?id=" . $Item['Cod_item'] . "' type='button' class='btn btn-danger'>ATUALIZAR</a>
-                                <a href='apagar.php?id=" . $Item['Cod_item'] . "' type='button' class='btn btn-warning'>APAGAR</a>
+                                <a href='form_atualiza.php?Cod_item=" . $Item['Cod_item'] . "' type='button' class='btn btn-danger'>ATUALIZAR</a>
+                                <a href='deletar.php?Cod_item=" . $Item['Cod_item'] . "' type='button' class='btn btn-warning'>APAGAR</a>
                             </div>
                         </td>
                         ";

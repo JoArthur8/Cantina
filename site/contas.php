@@ -1,6 +1,9 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cpf = $_POST['cpf'];
+    $nome = $_POST['nome_usuario'];
+    $senha = $_POST['senha'];
+    $tipo = $_POST['tipo'];
 
     // Remove caracteres não numéricos (caso venham por algum motivo)
     $cpf = preg_replace('/[^0-9]/', '', $cpf);
