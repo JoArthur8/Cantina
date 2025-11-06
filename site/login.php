@@ -34,8 +34,10 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
+
+                    <!-- Usuário põe as informações da conta, e é checado em checar.php -->
                     <form action="checar.php" method="POST">
-                        <!-- Email address input-->
+                        
                         <div class="mb-3"> 
                             <input type="text" class="form-control" name="nome_usuario" placeholder="Digite o seu nome de usuário" required>
                         </div>
@@ -44,6 +46,12 @@
                         </div>
                         <div class="mb-3"> 
                             <input type="number" class="form-control" name="cpf" placeholder="Digite seu CPF" required>
+                        </div>
+                        <div class=mb-3>
+                            <select name="tipo">
+                                <option value="consumidor">Consumidor</option>
+                                <option value="administrador">Diretor de Cantina</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
 

@@ -109,7 +109,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`CPF`, `Nome`, `Email`, `Senha`, `Tipo_Usuario`) VALUES
-('11122233344', 'João da Silva', 'joao.silva@aluno.com', 'senha_123', 'aluno'),
+('11122233344', 'João da Silva', 'joao.silva@aluno.com', 'senha_123', 'consumidor'),
 ('55566677788', 'Maria Oliveira', 'maria.adm@cantina.com', 'senha_456', 'administrador');
 
 --

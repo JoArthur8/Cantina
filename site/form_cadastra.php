@@ -40,11 +40,10 @@
                     <div class="mb-3"> 
                     <input type="number" class="form-control" name="cpf" placeholder="Digite seu CPF" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                         </div>
-                    <div class="mb-3"> 
-                        <!-- Fazer depois seleção de Tipo -->            
+                    <div class="mb-3">            
                         Tipo: <select name="tipo">
-                            <option value="0">Consumidor</option>
-                            <option value="1">Diretor de Cantina</option>
+                            <option value="consumidor">Consumidor</option>
+                            <option value="administrador">Diretor de Cantina</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
