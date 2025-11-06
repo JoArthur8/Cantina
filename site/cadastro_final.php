@@ -1,6 +1,5 @@
 <?php
     session_start();
-
     require 'conexao.php';
 
     // Verifica se os dados foram enviados via sessão
@@ -30,6 +29,21 @@
     // Executa a query e verifica se foi bem-sucedida
     $rs = mysqli_query($con, $sql);
     if($rs){
-        echo "Cadastro realizado com sucesso!";
+        // Cria a sessão de login automaticamente
+        $_SESSION['usuario'] = [
+            'cpf' => $cpf,
+            'nome' => $nome,
+            'email' => $email,
+            'tipo' => $tipo
+        ];
+
+        // Limpa os dados de cadastro da sessão
+        unset($_SESSION['dados_cadastro']);
+
+        // Redireciona para a área logada
+        header("Location: site_principal/inicio.php");
+        exit;
+    } else {
+        echo "Erro ao cadastrar: " . mysqli_error($con);
     }
 ?>

@@ -1,5 +1,7 @@
 <!-- Template escolhido: https://startbootstrap.com/theme/coming-soon -->
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,14 +29,15 @@
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
                     <h1 class="fst-italic lh-1 mb-4">Faça seu Login aqui:</h1>
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-
+                    <!--  Exibe mensagem de erro, se existir -->
+                    <?php if (isset($_SESSION['erro_login'])): ?>
+                    <div class="alert alert-danger" role="alert" style="max-width: 400px;">
+                        <?php 
+                            echo $_SESSION['erro_login']; 
+                            unset($_SESSION['erro_login']); // limpa pra não repetir
+                        ?>
+                    </div>
+                    <?php endif; ?>
                     <!-- Usuário põe as informações da conta, e é checado em checar.php -->
                     <form action="checar.php" method="POST">
                         

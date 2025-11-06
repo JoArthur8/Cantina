@@ -12,7 +12,7 @@
     $stmt = $pdo->prepare($consulta);
     
     // Vincula os parâmetros
-    $stmt->bindParam(':nome_usuario', $nome_usuario);
+    $stmt->bindParam(':nome_usuario', $nome);
     $stmt->bindParam(':senha', $senha);
     $stmt->bindParam(':cpf', $cpf);
     $stmt->bindParam(':tipo', $tipo);
@@ -40,7 +40,8 @@
         }
 
      }else{      
-        echo "$registros" ;
-        //header('Location: login.php');
+        $_SESSION['erro_login'] = "Login inválido! Verifique suas informações e tente novamente.";
+        header('Location: login.php');
+        exit;
     }
 ?>
