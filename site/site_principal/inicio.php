@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Yummy Bootstrap Template</title>
+  <title>CantinEtec</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -33,7 +33,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">CantinEtec</h1>
         <span>.</span>
       </a>
@@ -41,7 +41,6 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Início<br></a></li>
-          <li><a href="#about">Sobre</a></li>
           <li><a href="#menu">Cardápio</a></li>
           <li><a href="./carrinho.php">Carrinho</a></li>
           <li><a href="deslogar.php">Sair</a></li>
@@ -70,105 +69,8 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Sobre a CantinEtec<br></h2>
-        <p><span>Saiba Mais</span> <span class="description-title">Sobre a CantinEtec</span></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
-            <div class="book-a-table">
-              <h3>Entre em Contato</h3>
-              <p>+55 11 99999-9999</p>
-            </div>
-          </div>
-          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
-            <div class="content ps-0 ps-lg-5">
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Why Us Section -->
-    <section id="why-us" class="why-us section light-background">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="why-box">
-              <h3>Como funciona a CantinEtec</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
-            </div>
-          </div><!-- End Why Box -->
-
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="col-xl-4">
-                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-clipboard-data"></i>
-                  <h4>Cardápio Variado</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-gem"></i>
-                  <h4>Pedido Online Rápido</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-inboxes"></i>
-                  <h4>Pagamento Seguro</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Why Us Section -->
-
-    
     <!-- Menu Section -->
     <section id="menu" class="menu section">
-      <!-- Por o conteúdo de AAAA.txt aqui: -->
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Nosso Cardápio</h2>

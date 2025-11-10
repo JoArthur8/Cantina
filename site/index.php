@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Yummy Bootstrap Template</title>
+  <title>CantinEtec</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -33,7 +33,7 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">CantinEtec</h1>
         <span>.</span>
       </a>
