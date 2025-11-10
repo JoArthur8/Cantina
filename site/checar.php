@@ -29,9 +29,9 @@
 
     
     if($registros == 1){
-        $_SESSION['cpf'] = $resultado['cpf'];
-        $_SESSION['nome'] = $resultado['nome'];
-        $_SESSION['tipo'] = $resultado['tipo'];
+        $_SESSION['cpf'] = $resultado['Cpf'];
+        $_SESSION['nome'] = $resultado['Nome'];
+        $_SESSION['tipo'] = $resultado['Tipo_Usuario'];
 
         if ($tipo == 'administrador'){
             header('Location: site_principal/diretor.php');
