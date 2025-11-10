@@ -26,14 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="site_principal/assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Yummy
-  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -42,8 +34,6 @@
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">CantinEtec</h1>
         <span>.</span>
       </a>
@@ -100,17 +90,15 @@
           <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
             <div class="content ps-0 ps-lg-5">
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+                Sabores feitos com carinho, ingredientes frescos e aquele toque caseiro que faz toda a diferença. Descubra a experiência da nossa cantina online.
               </p>
               <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span><b>Comida preparada na hora</b>, cada prato é feito com ingredientes selecionados, garantindo sabor e qualidade.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span><b>Entrega rápida e segura</b>, retire sua refeição quentinha rapidamente.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span><b>Cardápio variado e acessível</b>, do café da manhã ao jantar, temos opções para todos os gostos e momentos.</span></li>
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                Nossos pratos são pensados para quem valoriza boa comida e praticidade. Faça seu pedido online, escolha seus favoritos e aproveite o sabor da cantina!
               </p>
             </div>
           </div>
@@ -130,10 +118,9 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="why-box">
               <h3>Como funciona a CantinEtec</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
+              <p>Peça seus lanches e refeições de forma simples e rápida!</p>
+              <p>Escolha o que quiser pelo site, finalize seu pedido e retire tudo prontinho quando chegar na escola.</p>
+              <p>Sem filas, sem espera, apenas o sabor do seu momento!</p>
             </div>
           </div><!-- End Why Box -->
 
@@ -144,7 +131,8 @@
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-clipboard-data"></i>
                   <h4>Cardápio Variado</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <p>Temos opções para todos os gostos: salgados, sucos, doces e refeições completas.</p>  
+                  <p>Tudo preparado com cuidado e ingredientes de qualidade.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -152,7 +140,8 @@
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-gem"></i>
                   <h4>Pedido Online Rápido</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <p>Escolha, clique e pronto!</p>
+                  <p>Em poucos segundos, seu pedido é confirmado e preparado para retirada.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -160,7 +149,8 @@
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-inboxes"></i>
                   <h4>Pagamento Seguro</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <p>Pague online com segurança e evite filas.</p>
+                  <p>Aceitamos diversos métodos para facilitar sua vida!</p>
                 </div>
               </div><!-- End Icon Box -->
 
