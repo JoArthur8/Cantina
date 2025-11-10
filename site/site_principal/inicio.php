@@ -31,7 +31,6 @@
 
       <div class="container">
 
-
         <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
 
           <div class="tab-pane fade active show" id="menu-starters">
@@ -40,84 +39,51 @@
               <h3>Menu</h3>
             </div>
 
-            <div class="row gy-5">
+          <div class="row gy-5">
+            <?php
+            include '../conexao.php';
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Magnam Tiste</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  R$5,95
-                </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
-              </div><!-- Menu Item -->
+            try {
+                $sql = "SELECT Nome, Preco, Descricao, Imagem FROM Item";
+                $stmt = $pdo->query($sql);
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Aut Luia</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  R$14,95
-                </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
-              </div><!-- Menu Item -->
+                if ($stmt->rowCount() > 0) {
+                    while ($item = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        // Seta uma imagem padrão se não houver
+                        $imagem = !empty($item['Imagem']) ? htmlspecialchars($item['Imagem']) : 'assets/img/sem-imagem.png';
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Est Eligendi</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  R$8,95
-                </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
-              </div><!-- Menu Item -->
+                        // Só adiciona o link lightbox se tiver imagem real
+                        if (!empty($item['Imagem'])) {
+                            $imgTag = '
+                                <a href="' . $imagem . '" class="glightbox">
+                                  <img src="' . $imagem . '" class="menu-img img-fluid" alt="">
+                                </a>';
+                        } else {
+                            $imgTag = '
+                                <img src="' . $imagem . '" class="menu-img img-fluid" alt="">';
+                        }
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Eos Luibusdam</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  R$12,95
-                </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
-              </div><!-- Menu Item -->
+                        echo '
+                        <div class="col-lg-4 menu-item">
+                          ' . $imgTag . '
+                          <h4>' . htmlspecialchars($item['Nome']) . '</h4>
+                          <p class="ingredients">' . htmlspecialchars($item['Descricao']) . '</p>
+                          <p class="price">R$' . number_format($item['Preco'], 2, ',', '.') . '</p>
+                          <button class="btn btn-primary">Adicionar ao carrinho</button>
+                        </div>';
+                    }
+                } else {
+                    echo '<p class="text-center">Nenhum item no cardápio ainda 😢</p>';
+                }
+            } catch (PDOException $e) {
+                echo '<p class="text-danger">Erro: ' . htmlspecialchars($e->getMessage()) . '</p>';
+            }
+            ?>
+          </div>
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Eos Luibusdam</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  R$12,95
-                </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
-              </div><!-- Menu Item -->
 
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Laboriosam Direva</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  R$9,95
-                </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
-              </div><!-- Menu Item -->
 
-            </div>
           </div><!-- End Starter Menu Content -->
-
-          
 
         </div>
 

@@ -20,6 +20,7 @@
                     <th>Quantidade</th>
                     <th>Tipo</th>
                     <th>Descrição</th>
+                    <th>Imagem</th>
                     <th>Opções</th>
                 </tr>
             </thead>
@@ -36,6 +37,7 @@
                     echo "<td>{$Item['Quantidade_Estoque']}</td>";
                     echo "<td>{$Item['Tipo']}</td>";
                     echo "<td class='text-muted small'>{$Item['Descricao']}</td>";
+                    echo "<td><img src='{$Item['Imagem']}' alt='{$Item['Nome']}' style='width: 80px; height: 80px; object-fit: cover; border-radius: 8px;'></td>";
                     echo "
                         <td>
                             <div class='btn-group' role='group'>
