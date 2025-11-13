@@ -207,7 +207,7 @@
                 <p class="price">
                   R$5,95
                 </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
+                <button class="btn btn-primary" id="item1">Adicionar ao carrinho</button>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
@@ -219,7 +219,7 @@
                 <p class="price">
                   R$14,95
                 </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
+                <button class="btn btn-primary" id="item2">Adicionar ao carrinho</button>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
@@ -231,7 +231,7 @@
                 <p class="price">
                   R$8,95
                 </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
+                <button class="btn btn-primary" id="item3">Adicionar ao carrinho</button>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
@@ -243,7 +243,7 @@
                 <p class="price">
                   R$12,95
                 </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
+                <button class="btn btn-primary" id="item4">Adicionar ao carrinho</button>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
@@ -255,7 +255,7 @@
                 <p class="price">
                   R$12,95
                 </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
+                <button class="btn btn-primary" id="item5">Adicionar ao carrinho</button>
               </div><!-- Menu Item -->
 
               <div class="col-lg-4 menu-item">
@@ -267,7 +267,7 @@
                 <p class="price">
                   R$9,95
                 </p>
-                <button class="btn btn-primary">Adicionar ao carrinho</button>
+                <button class="btn btn-primary" id="item6" onclick="">Adicionar ao carrinho</button>
               </div><!-- Menu Item -->
 
             </div>
@@ -345,7 +345,28 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Exemplo simples de adicionar itens ao carrinho usando localStorage
+    document.getElementById("item1").addEventListener("click", function() {
+      localStorage.setItem("item1", 1); 
+    });
+    document.getElementById("item2").addEventListener("click", function() {
+      localStorage.setItem("item2");
+    });
+    document.getElementById("item3").addEventListener("click", function() {
+      localStorage.setItem("item3");
+    });
+    document.getElementById("item4").addEventListener("click", function() {
+      localStorage.setItem("item4");
+    });
+    document.getElementById("item5").addEventListener("click", function() {
+      localStorage.setItem("item5");
+    });
+    document.getElementById("item6").addEventListener("click", function() {
+      localStorage.setItem("item6");
+    });
 
+  </script>
 </body>
 
 </html>

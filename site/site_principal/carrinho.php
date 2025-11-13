@@ -45,11 +45,44 @@
 
 <script>
     // só pro carrinho não ficar vazio (ai é só trocar ou tirar depois)
-    const carrinho = [
-        {nome: "Hambúrguer", quantidade: 2, preco: 12.50},
-        {nome: "Suco Natural", quantidade: 1, preco: 5.00},
-        {nome: "Batata Frita", quantidade: 3, preco: 8.00}
-    ];
+    // var item1 = {nome: "Hambúrguer", quantidade: 1, preco: 12.50};
+    var item2 = {nome: "Suco Natural", quantidade: 1, preco: 5.00};
+    var item3 = {nome: "Batata Frita", quantidade: 1, preco: 8.00};
+    var item4 = {nome: "Refrigerante", quantidade: 1, preco: 6.00};
+    var item5 = {nome: "Salada", quantidade: 1, preco: 7.50};
+    var item6 = {nome: "Sobremesa", quantidade: 1, preco: 10.00};
+
+
+    var carrinho = [];
+    if (localStorage.getItem("item1")) {
+        carrinho.push('item1');
+    }
+    if (localStorage.getItem("item1")) {
+        carrinho.push(item2);
+        localStorage.removeItem("item2");
+    }
+    if (localStorage.getItem("item1")) {
+        carrinho.push(item3);
+        localStorage.removeItem("item3");
+    }
+    if (localStorage.getItem("item1")) {
+        carrinho.push(item4);
+        localStorage.removeItem("item4");
+    }
+    if (localStorage.getItem("item1")) {
+        carrinho.push(item5);
+        localStorage.removeItem("item5");
+    }
+    if (localStorage.getItem("item1")) {
+        carrinho.push(item6);
+        localStorage.removeItem("item6");
+    }
+
+    // var carrinho = [
+    //     {nome: "Hambúrguer", quantidade: 2, preco: 12.50},
+    //     {nome: "Suco Natural", quantidade: 1, preco: 5.00},
+    //     {nome: "Batata Frita", quantidade: 3, preco: 8.00}
+    // ];
 
     function atualizarCarrinho() {
         const tbody = document.getElementById("cart-items");
@@ -64,14 +97,24 @@
             tr.innerHTML = `
                 <td>${item.nome}</td>
                 <td>${item.quantidade}</td>
-                <td>R$ ${item.preco.toFixed(2)}</td>
-                <td>R$ ${subtotal.toFixed(2)}</td>
+                <td>R$ ${item.preco?.toFixed(2)}</td>
+                <td>R$ ${subtotal?.toFixed(2)}</td>
+
             `;
             tbody.appendChild(tr);
+            // document.getElementById('btn-remove').addEventListener('click', function() {
+            //     var index = carrinho.indexOf(item);
+            //     if (index == 1){
+            //         carrinho.splice(index, 1);
+            //     }
+
+            // });
         });
 
         document.getElementById("total-price").innerText = total.toFixed(2);
     }
+
+
 
     function finalizarCompra() {
         const formaPagamento = document.getElementById("payment-method").value;
