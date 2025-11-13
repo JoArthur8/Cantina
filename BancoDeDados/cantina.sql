@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Out-2025 às 13:45
+-- Tempo de geração: 13-Nov-2025 às 12:24
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -35,17 +35,19 @@ CREATE TABLE `item` (
   `Descricao` text NOT NULL,
   `Preco` decimal(5,2) NOT NULL,
   `Tipo` varchar(50) NOT NULL,
-  `Quantidade_Estoque` int(11) NOT NULL
+  `Quantidade_Estoque` int(11) NOT NULL,
+  `Imagem` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `item`
 --
 
-INSERT INTO `item` (`Cod_item`, `Nome`, `Descricao`, `Preco`, `Tipo`, `Quantidade_Estoque`) VALUES
-(1, 'Coxinha de Frango', 'Salgado com recheio de frango', '5.50', 'Salgado', 50),
-(2, 'Refrigerante Lata', 'Coca-Cola, Guaraná ou Fanta', '4.00', 'Bebida', 100),
-(3, 'Brigadeiro', 'Doce de chocolate tradicional', '2.50', 'Doce', 30);
+INSERT INTO `item` (`Cod_item`, `Nome`, `Descricao`, `Preco`, `Tipo`, `Quantidade_Estoque`, `Imagem`) VALUES
+(1, 'Coxinha de Frango', 'Salgado com recheio de frango', '5.50', 'Salgado', 50, ''),
+(2, 'Refrigerante Lata', 'Coca-Cola, Guaraná ou Fanta', '4.00', 'Bebida', 100, ''),
+(3, 'Brigadeiro', 'Doce de chocolate tradicional', '2.50', 'Doce', 30, ''),
+(4, 'Enroladinho de Salsicha', 'Uma salsicha muito gostosa', '10.00', 'Salgado', 10, 'assets/img/menu/enroladinho-salsicha.png');
 
 -- --------------------------------------------------------
 
@@ -68,13 +70,11 @@ INSERT INTO `item_pedido` (`Quantidade`, `Pedido_Cod_pedido`, `Item_Cod_item`, `
 (2, 1, 1, '20.49'),
 (1, 1, 2, '15.99');
 
-
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `pedido`
 --
-
 
 CREATE TABLE `pedido` (
   `Cod_pedido` int(11) NOT NULL,
@@ -151,7 +151,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `Cod_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Cod_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `pedido`

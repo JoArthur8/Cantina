@@ -37,7 +37,7 @@ session_start();
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a class="logo d-flex align-items-center me-auto me-xl-0" href="inicio.php">
+      <a class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">CantinEtec</h1><span>.</span>
       </a>
 
