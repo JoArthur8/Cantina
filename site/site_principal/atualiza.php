@@ -1,6 +1,6 @@
 
 <?php
-    require 'conexao.php';
+    require '../conexao.php';
 
     $Cod_item = $_GET['Cod_item'];
     $nome_novo = $_POST['nome_novo'];
@@ -16,13 +16,16 @@
 
     $stmt->bindParam(':Cod_item', $Cod_item);
     $stmt->bindParam(':nome_novo', $nome_novo);
+    $stmt->bindParam(':descricao_nova', $descricao_nova);
     $stmt->bindParam(':preco_novo', $preco_novo);
+    $stmt->bindParam(':tipo_novo', $tipo_novo);
     $stmt->bindParam(':quantidade_novo', $quantidade_novo);
+    $stmt->bindParam(':imagem_nova', $imagem_nova);
 
 
     if ($stmt->execute()) {
         // echo "Produto atualizado com sucesso!";
-        header("location: listar.php");
+        header("location: diretor.php");
     } else {
         echo "Erro ao atualizar produto.";
     }

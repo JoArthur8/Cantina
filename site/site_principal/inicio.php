@@ -62,7 +62,7 @@
                             $imgTag = '
                                 <img src="' . $imagem . '" class="menu-img img-fluid" alt="">';
                         }
-
+ 
                         echo '
                         <div class="col-lg-4 menu-item">
                           ' . $imgTag . '
