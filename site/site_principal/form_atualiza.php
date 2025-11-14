@@ -4,7 +4,7 @@
 ?>
 
     <div class="container">
-        <form action="atualiza.php?Cod_item=<?php echo "$Cod_item"; ?>" method="POST"> 
+        <form action="atualiza.php?Cod_item=<?php echo "$Cod_item"; ?>" method="POST" enctype="multipart/form-data"> 
         <?php
             require '../conexao.php';
             $Cod_item = $_GET['Cod_item'];
@@ -35,7 +35,7 @@
                 <input type="file" value="<?php echo $Item['Imagem']; ?>" name="imagem_nova" class="form-control">
             </div>
 
-            <a name="btn-atualiza" class="btn btn-danger" href='atualiza.php'>ATUALIZAR</a>
+            <button type="submit" name="btn-atualiza" class="btn btn-danger">ATUALIZAR</button>
             <?php 
                 if (isset($_POST['btn-atualiza'])){
                     echo 'teste';
