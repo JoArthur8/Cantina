@@ -57,19 +57,13 @@ session_start();
             <li><a href="#menu">Cardápio</a></li>
             <li><a href="./carrinho.php">Carrinho</a></li>
             <li><a class="nav-link" href="deslogar.php">Sair</a></li>
-</div></li>
           <?php endif; ?>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-
-         <!-- Nome do usuário à direita -->
-      <span class="navbar-text ms-auto margin-right-3">
-        <?php echo htmlspecialchars($_SESSION['usuario']['nome']); ?>
-      </span>
       </nav>
       <!-- Nome do usuário alinhado à direita -->
       <span class="navbar-text ms-0 fw-semibold d-none d-xl-inline mb-1">
-        <?php echo htmlspecialchars($_SESSION['nome']); ?>
+        <?php echo isset($_SESSION['nome']) ? htmlspecialchars($_SESSION['nome']) : ''; ?>
       </span>
     </div>
   </header>
