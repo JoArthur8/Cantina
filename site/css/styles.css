@@ -10966,3 +10966,6 @@ video.bg-video {
     width: auto;
   }
 }
+.custom-red {
+  background-color: #cc0000; /* vermelho personalizado */
+}
