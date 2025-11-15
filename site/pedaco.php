@@ -1,5 +1,6 @@
 <?php
 session_start();
+   require 'conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +56,9 @@ session_start();
             <li><a href="#hero" class="active">Início</a></li>
             <li><a href="#menu">Cardápio</a></li>
             <li><a href="./carrinho.php">Carrinho</a></li>
-            <li><a href="deslogar.php">Sair</a></li>
+            <li><a class="nav-link" href="deslogar.php">Sair</a></li>
+            <li> <?php echo htmlspecialchars($_SESSION['nome']); ?> </li>
+</div></li>
           <?php endif; ?>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

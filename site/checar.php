@@ -2,17 +2,17 @@
     session_start();    
     include_once 'conexao.php';
     
-    $nome = $_POST['nome_usuario'];
+    $nome = $_POST['nome'];
     $senha = $_POST['senha'];
     $cpf = $_POST['cpf'];
     $tipo = $_POST['tipo'];
     
-    $consulta = "SELECT * FROM usuario WHERE Nome = :nome_usuario AND Senha = :senha AND Cpf = :cpf AND Tipo_usuario = :tipo";
+    $consulta = "SELECT * FROM usuario WHERE Nome = :nome AND Senha = :senha AND Cpf = :cpf AND Tipo_usuario = :tipo";
     
     $stmt = $pdo->prepare($consulta);
     
     // Vincula os parâmetros
-    $stmt->bindParam(':nome_usuario', $nome);
+    $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':senha', $senha);
     $stmt->bindParam(':cpf', $cpf);
     $stmt->bindParam(':tipo', $tipo);

@@ -21,73 +21,47 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Nosso Cardápio</h2>
-        <p><span>Cheque o nosso</span> <span class="description-title">CantinEtec Cardápio</span></p>
-      </div><!-- End Section Title -->
+    <?php
+require_once '../conexao.php';
 
-      <div class="container">
+// Busca os itens
+$stmt = $pdo->prepare("SELECT * FROM item");
+$stmt->execute();
+$itens = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+<section id="Menu" class="menu">
+  <div class="container">
+    <div class="section-title">
+      <h2>Cardápio</h2>
+    </div>
 
-          <div class="tab-pane fade active show" id="menu-starters">
+    <div class="row gy-4">
+      <?php foreach ($itens as $item): ?>
+        <?php
+          // monta a tag de imagem de forma segura
+          $imgSrc = htmlspecialchars($item['Imagem'] ?? '');
+          $imgTag = $imgSrc ? '<img src="' . $imgSrc . '" alt="' . htmlspecialchars($item['Nome']) . '" class="menu-img img-fluid">' : '';
+        ?>
 
-            <div class="tab-header text-center">
-              <h3>Menu</h3>
-            </div>
+        <div class="col-lg-4 menu-item">
+          <?= $imgTag ?>
 
-          <div class="row gy-5">
-            <?php
-            include '../conexao.php';
+          <h4><?= htmlspecialchars($item['Nome']) ?></h4>
+          <p class="ingredients"><?= htmlspecialchars($item['Descricao']) ?></p>
+          <p class="price">R$<?= number_format($item['Preco'], 2, ',', '.') ?></p>
 
-            try {
-                $sql = "SELECT Nome, Preco, Descricao, Imagem FROM Item";
-                $stmt = $pdo->query($sql);
-
-                if ($stmt->rowCount() > 0) {
-                    while ($item = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        // Seta uma imagem padrão se não houver
-                        $imagem = !empty($item['Imagem']) ? htmlspecialchars($item['Imagem']) : 'assets/img/sem-imagem.png';
-
-                        // Só adiciona o link lightbox se tiver imagem real
-                        if (!empty($item['Imagem'])) {
-                            $imgTag = '
-                                <a href="' . $imagem . '" class="glightbox">
-                                  <img src="' . $imagem . '" class="menu-img img-fluid" alt="">
-                                </a>';
-                        } else {
-                            $imgTag = '
-                                <img src="' . $imagem . '" class="menu-img img-fluid" alt="">';
-                        }
- 
-                        echo '
-                        <div class="col-lg-4 menu-item">
-                          ' . $imgTag . '
-                          <h4>' . htmlspecialchars($item['Nome']) . '</h4>
-                          <p class="ingredients">' . htmlspecialchars($item['Descricao']) . '</p>
-                          <p class="price">R$' . number_format($item['Preco'], 2, ',', '.') . '</p>
-                          <button class="btn btn-primary">Adicionar ao carrinho</button>
-                        </div>';
-                    }
-                } else {
-                    echo '<p class="text-center">Nenhum item no cardápio ainda 😢</p>';
-                }
-            } catch (PDOException $e) {
-                echo '<p class="text-danger">Erro: ' . htmlspecialchars($e->getMessage()) . '</p>';
-            }
-            ?>
-          </div>
-
-
-
-          </div><!-- End Starter Menu Content -->
-
+          <form action="adicionar_carrinho.php" method="POST">
+            <input type="hidden" name="id" value="<?= (int)$item['Cod_item'] ?>">
+            <button type="submit" class="btn btn-primary">Adicionar ao carrinho</button>
+          </form>
         </div>
 
-      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
 
     </section><!-- /Menu Section -->
     <section class="text-center" id="Contato">

@@ -42,7 +42,7 @@ session_start();
                     <form action="checar.php" method="POST">
                         
                         <div class="mb-3"> 
-                            <input type="text" class="form-control" name="nome_usuario" placeholder="Digite o seu nome de usuário" required>
+                            <input type="text" class="form-control" name="nome" placeholder="Digite o seu nome de usuário" required>
                         </div>
                         <div class="mb-3"> 
                             <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha" required>
