@@ -57,11 +57,15 @@ session_start();
             <li><a href="#menu">Cardápio</a></li>
             <li><a href="./carrinho.php">Carrinho</a></li>
             <li><a class="nav-link" href="deslogar.php">Sair</a></li>
-            <li> <?php echo htmlspecialchars($_SESSION['nome']); ?> </li>
 </div></li>
           <?php endif; ?>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+         <!-- Nome do usuário à direita -->
+      <span class="navbar-text ms-auto margin-right-3">
+        <?php echo htmlspecialchars($_SESSION['usuario']['nome']); ?>
+      </span>
       </nav>
     </div>
   </header>

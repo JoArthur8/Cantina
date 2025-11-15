@@ -61,7 +61,7 @@ $carrinho = $_SESSION['carrinho'] ?? [];
 
       <!-- Nome do usuário à direita -->
       <span class="navbar-text ms-auto">
-        <?php echo htmlspecialchars($_SESSION['nome']); ?>
+        <?php echo htmlspecialchars($_SESSION['usuario']['nome']); ?>
       </span>
 
       <!-- Título também à direita -->
