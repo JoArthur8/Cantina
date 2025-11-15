@@ -2,7 +2,7 @@
     session_start();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cpf = $_POST['cpf'];
-        $nome = $_POST['nome_usuario'];
+        $nome = $_POST['nome'];
         $senha = $_POST['senha'];
         $tipo = $_POST['tipo'];
         $email = $_POST['email'];

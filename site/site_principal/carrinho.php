@@ -1,87 +1,123 @@
+<?php
+session_start();
+require_once '../conexao.php';
+
+$carrinho = $_SESSION['carrinho'] ?? [];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - CantinEtec</title>
-    <link href="assets/css/carrinhostyle.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CantinEtec - Carrinho</title>
+
+  <!-- Bootstrap -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link href="assets/css/carrinhostyle.css" rel="stylesheet">
 </head>
+
 <body>
 
 <header>
-    <h1>Carrinho de Compras</h1>
+    <nav class="navbar navbar-dark custom-red py-2">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+            <!-- LADO ESQUERDO: seta -->
+            <div class="d-flex align-items-center">
+                <a href="inicio.php" class="back-btn">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+            </div>
+
+            <!-- CENTRO: título -->
+            <div class="flex-grow-1 text-center">
+                <span class="titulo-carrinho">Carrinho</span>
+            </div>
+
+            <!-- DIREITA: nome -->
+            <div class="nome-usuario text-end">
+                <?= htmlspecialchars($_SESSION['nome']); ?>
+            </div>
+
+        </div>
+    </nav>
 </header>
 
-<div class="container">
-    <table>
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Quantidade</th>
-                <th>Preço Unitário</th>
-                <th>Subtotal</th>
-            </tr>
-        </thead>
-        <tbody id="cart-items">
-            <!-- Os itens do carrinho vão ser inseridos aqui -->
-        </tbody>
-    </table>
 
-    <div class="total">
-        Total: R$ <span id="total-price">0.00</span>
+<div class="container mt-4">
+
+<?php if (empty($carrinho)): ?>
+    <div class="alert alert-warning text-center">
+        Seu carrinho está vazio.
     </div>
 
-    <div class="payment">
-        <label for="payment-method">Forma de Pagamento:</label>
-        <select id="payment-method">
-            <option value="dinheiro">Dinheiro</option>
-            <option value="cartao">Cartão de Crédito/Débito</option>
+<?php else: ?>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-danger">
+                <tr>
+                    <th>Produto</th>
+                    <th class="text-center">Qtd</th>
+                    <th>Preço</th>
+                    <th>Subtotal</th>
+                    <th class="text-center">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php 
+            $total = 0;
+            foreach ($carrinho as $id => $item):
+                $subtotal = $item['preco'] * $item['qtd'];
+                $total += $subtotal;
+            ?>
+                <tr>
+                    <td><?= htmlspecialchars($item['nome']); ?></td>
+                    <td class="text-center"><?= $item['qtd']; ?></td>
+                    <td>R$ <?= number_format($item['preco'], 2, ',', '.'); ?></td>
+                    <td>R$ <?= number_format($subtotal, 2, ',', '.'); ?></td>
+                    <td class="text-center">
+                        <form action="remover_carrinho.php" method="POST" class="d-inline">
+                            <input type="hidden" name="index" value="<?= $id ?>">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Total -->
+    <div class="text-end fs-5 fw-semibold mt-3">
+        Total: R$ <?= number_format($total, 2, ',', '.'); ?>
+    </div>
+
+    <!-- Pagamento -->
+    <form action="finalizar_carrinho.php" method="POST" class="mt-4">
+        <label for="forma_pagamento" class="form-label">Forma de Pagamento</label>
+        <select class="form-select shadow-sm" id="forma_pagamento" name="forma_pagamento" required>
+            <option value="">Selecione...</option>
+            <option value="cartao_credito">Cartão de Crédito</option>
+            <option value="cartao_debito">Cartão de Débito</option>
             <option value="pix">PIX</option>
+            <option value="dinheiro">Dinheiro</option>
         </select>
-    </div>
 
-    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+        <button type="submit" class="btn btn-success mt-3 w-100 py-2 shadow-sm">
+            Finalizar Compra
+        </button>
+    </form>
+
+<?php endif; ?>
+
 </div>
-
-<script>
-    // só pro carrinho não ficar vazio (ai é só trocar ou tirar depois)
-    const carrinho = [
-        {nome: "Hambúrguer", quantidade: 2, preco: 12.50},
-        {nome: "Suco Natural", quantidade: 1, preco: 5.00},
-        {nome: "Batata Frita", quantidade: 3, preco: 8.00}
-    ];
-
-    function atualizarCarrinho() {
-        const tbody = document.getElementById("cart-items");
-        tbody.innerHTML = "";
-        let total = 0;
-
-        carrinho.forEach(item => {
-            const subtotal = item.quantidade * item.preco;
-            total += subtotal;
-
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td>${item.nome}</td>
-                <td>${item.quantidade}</td>
-                <td>R$ ${item.preco.toFixed(2)}</td>
-                <td>R$ ${subtotal.toFixed(2)}</td>
-            `;
-            tbody.appendChild(tr);
-        });
-
-        document.getElementById("total-price").innerText = total.toFixed(2);
-    }
-
-    function finalizarCompra() {
-        const formaPagamento = document.getElementById("payment-method").value;
-        alert(`Compra finalizada!\nForma de pagamento: ${formaPagamento}\nTotal: R$ ${document.getElementById("total-price").innerText}`);
-        // Um alert só pra encher linguiça mesmo
-    }
-
-    // Inicia a função
-    atualizarCarrinho();
-</script>
 
 </body>
 </html>

@@ -49,7 +49,7 @@ session_start();
             <li><a href="diretor.php">Painel</a></li>
             <li><a href="inicio.php">Cardápio</a></li>
             <li><a href="deslogar.php">Sair</a></li>
-
+            
           <?php else: ?>
             <!-- Navbar normal -->
             <li><a href="#hero" class="active">Início</a></li>
@@ -60,5 +60,9 @@ session_start();
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+      <!-- Nome do usuário alinhado à direita -->
+      <span class="navbar-text ms-0 fw-semibold d-none d-xl-inline mb-1">
+        <?php echo htmlspecialchars($_SESSION['nome']); ?>
+      </span>
     </div>
   </header>

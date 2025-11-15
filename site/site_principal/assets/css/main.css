@@ -1658,3 +1658,25 @@ section,
 .image-update {
   width: 10%;
 }
+
+/* === AJUSTE DEFINITIVO DOS CARDS DO MENU === */
+section.menu .tab-content .menu-item {
+    height: 430px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Força altura padrão das imagens */
+section.menu .tab-content .menu-item .menu-img,
+.menu .tab-content .menu-item .menu-img,
+.menu-item .menu-img {
+    height: 180px !important;
+    width: 100% !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+}
