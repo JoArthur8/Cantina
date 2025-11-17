@@ -47,7 +47,7 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    <a href="index.php" type="button" class="btn btn-danger">Voltar</a>
+                    <a href="login.php" type="button" class="btn btn-danger">Voltar</a>
                 </form>
             </div>
         </div>

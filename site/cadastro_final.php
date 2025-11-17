@@ -41,7 +41,7 @@
         unset($_SESSION['dados_cadastro']);
 
         // Redireciona para a área logada
-        header("Location: site_principal/inicio.php");
+        header("Location: login.php");
         exit;
     } else {
         echo "Erro ao cadastrar: " . mysqli_error($con);
