@@ -1,4 +1,17 @@
 h1{
     text-align: center;
-
+}
+img{
+    border-radius: 15px;
+}
+.titulo{
+    font-size: 45px;
+}
+.sobreimg{
+    width: 75%;
+    border: 2px wheat solid;
+}
+.sobreimg2{
+    width: 60%;
+    border: 2px wheat solid;
 }
