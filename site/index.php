@@ -26,6 +26,8 @@
 
   <!-- Main CSS File -->
   <link href="site_principal/assets/css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body class="index-page">
@@ -58,7 +60,7 @@
         <div class="row gy-4 justify-content-center justify-content-lg-between">
           <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <h1 data-aos="fade-up">Aproveite a sua<br>Comida Deliciosa</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Compre e aproveite!</p>
+            <p data-aos="fade-up" data-aos-delay="100" class="text-center">Compre e aproveite!</p>
           </div>
           <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
             <img src="site_principal/assets/img/hero-img.png" class="img-fluid animated" alt="">
@@ -169,29 +171,29 @@
           <div class="col">
 
             <img class="sobreimg" src="assets/img/Joao.PNG" alt="">
-            <p class="text-black">João Arthur</p>
+            <h4 class="text-black">João Arthur</h4>
           </div>
           <div class="col">
 
             <img class="sobreimg" src="assets/img/Dudu.jpeg" alt="">
-            <p class="text-black">Eduardo Luiz</p>
+            <h4 class="text-black">Eduardo Luiz</h4>
           </div>
           <div class="col">
 
-            <img class="sobreimg" src="assets/img/euarthur (1).jpg" alt="">
-            <p class="text-black">Arthur Luz</p>
+            <img class="sobreimg" src="assets/img/arthur.jpg" alt="">
+            <h4 class="text-black">Arthur Luz</h4>
           </div>
         </div>
         <div class="row">
           <div class="col">
 
-            <img class="sobreimg" src="assets/img/guilherme.jfif" alt="">
-            <p class="text-black">Guilherme Gimenes</p>
+            <img class="sobreimg2" src="assets/img/guilherme.jpg" alt="">
+            <h4 class="text-black">Guilherme Gimenes</h4>
           </div>
           <div class="col">
 
-            <img class="sobreimg" src="assets/img/thiago.jfif" alt="">
-            <p class="text-black">Caio Oliveira</p>
+            <img class="sobreimg2" src="assets/img/sem-imagem.png" alt="">
+            <h4 class="text-black">Caio Oliveira</h4>
           </div>
         </div>
       </div>
@@ -200,13 +202,13 @@
         <div class="row">
           <div class="col">
 
-            <img class="sobreimg2" src="assets/img/cintia.jpg" alt="">
-            <p class="text-black">Cíntia Pinho</p>
+            <img class="sobreimg" src="assets/img/cintia.jpg" alt="">
+            <h3 class="text-black">Cíntia Pinho</h3>
           </div>
           <div class="col">
 
-            <img class="sobreimg2" src="assets/img/amanda.jpg" alt="">
-            <p class="text-black">Anderson Vanin</p>
+            <img class="sobreimg" src="assets/img/anderson.jpg" alt="">
+            <h3 class="text-black">Anderson Vanin</h3>
           </div>
         </div>
       </div>

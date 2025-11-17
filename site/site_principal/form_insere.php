@@ -1,6 +1,9 @@
 <?php 
     include '../pedaco.php';
 ?> 
+<head>
+    <link rel="stylesheet" href="../estilo.css">
+</head>
     <!-- Formulário de inserção de produto -->
     <div class="container">
         <form action="inserir.php" method="POST" enctype="multipart/form-data">
@@ -14,7 +17,7 @@
                 <input type="text" class="form-control" name="quantidade" placeholder="Digite a quantidade em estoque do produto">
             </div>
             <div class="mb-3"> 
-                <select name="tipo">
+                <select class='form-select' name="tipo">
                     <option value="Doce">Doce</option>
                     <option value="Salgado">Salgado</option>
                     <option value="Bebida">Bebida</option>
