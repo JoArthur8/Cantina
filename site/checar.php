@@ -2,23 +2,28 @@
     session_start();    
     include_once 'conexao.php';
     
-    $nome = $_POST['nome'];
+    $usuario = isset($_POST['usuario']) ? trim($_POST['usuario']) : '';
     $senha = $_POST['senha'];
     $cpf = $_POST['cpf'];
-    $tipo = $_POST['tipo'];
+
+    $e_email = filter_var($usuario, FILTER_VALIDATE_EMAIL) !== false;
     
-    $consulta = "SELECT * FROM usuario WHERE Nome = :nome AND Senha = :senha AND Cpf = :cpf AND Tipo_usuario = :tipo";
+    $_SESSION['login_tipo'] = $is_email ? 'email' : 'nome';
+
+    $consulta = "SELECT * FROM usuario WHERE (Nome = :usuario OR Email = :usuario) AND Senha = :senha AND Cpf = :cpf ";
     
     $stmt = $pdo->prepare($consulta);
     
     // Vincula os parâmetros
-    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':usuario', $usuario);
     $stmt->bindParam(':senha', $senha);
     $stmt->bindParam(':cpf', $cpf);
-    $stmt->bindParam(':tipo', $tipo);
+
     
     // Executa a consulta
     $stmt->execute();
+
+    
 
     // Obtém o número de registros encontrados
     $registros = $stmt->rowCount();
@@ -32,6 +37,9 @@
         $_SESSION['cpf'] = $resultado['Cpf'];
         $_SESSION['nome'] = $resultado['Nome'];
         $_SESSION['tipo'] = $resultado['Tipo_Usuario'];
+
+        
+         $tipo = $resultado['Tipo_Usuario'];
 
         if ($tipo == 'administrador'){
             header('Location: site_principal/diretor.php');

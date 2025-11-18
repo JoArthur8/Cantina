@@ -42,7 +42,7 @@ session_start();
                     <form action="checar.php" method="POST">
                         
                         <div class="mb-3"> 
-                            <input type="text" class="form-control" name="nome" placeholder="Digite o seu nome de usuário" required>
+                            <input type="text" class="form-control" name="usuario" placeholder="Digite seu nome de usuário ou email" required>
                         </div>
                         <div class="mb-3"> 
                             <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha" required>
@@ -50,12 +50,7 @@ session_start();
                         <div class="mb-3"> 
                             <input type="number" class="form-control" name="cpf" placeholder="Digite seu CPF" required>
                         </div>
-                        <div class=mb-3>
-                            <select name="tipo">
-                                <option value="consumidor">Consumidor</option>
-                                <option value="administrador">Diretor de Cantina</option>
-                            </select>
-                        </div>
+                        
                         <button type="submit" class="btn btn-primary">Entrar</button>
 
                         <a href="form_cadastra.php" type="button" class="btn btn-danger">Cadastrar Conta</a>

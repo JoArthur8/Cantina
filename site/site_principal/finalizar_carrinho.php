@@ -12,6 +12,9 @@ if (!isset($_SESSION['nome'])) {
 if (isset($_SESSION['carrinho'])) {
     unset($_SESSION['carrinho']);
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

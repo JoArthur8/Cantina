@@ -5,7 +5,7 @@
     // Verifica se os dados foram enviados via sessão
     if (!isset($_SESSION['dados_cadastro'])) {
         die("Nenhum dado recebido.");
-    }
+    } 
 
     // Recupera os dados da sessão
     $dados = $_SESSION['dados_cadastro'];

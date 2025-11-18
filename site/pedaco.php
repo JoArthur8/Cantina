@@ -1,6 +1,16 @@
 <?php
 session_start();
    require 'conexao.php';
+
+    if((!isset($_SESSION['cpf'])) and (!isset($_SESSION['nome'])) and (!isset($_SESSION['tipo'])) ){
+        unset(
+            $_SESSION['cpf'],
+            $_SESSION['nome'],
+            $_SESSION['tipo']
+
+        );
+        header('location: ../index.php');
+    }
 ?>
 
 <!DOCTYPE html>
