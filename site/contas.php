@@ -46,9 +46,12 @@
         $_SESSION['dados_cadastro'] = [
             'cpf' => $cpf,
             'nome' => $nome,
-            'senha' => $senha,
+            'original' => $senha,
+            'senha' => password_hash($senha, PASSWORD_DEFAULT),
             'tipo' => $tipo,
             'email' => $email
+            
+
         ];
 
         // Redireciona para a página de cadastro final

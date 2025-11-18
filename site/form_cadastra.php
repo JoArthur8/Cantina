@@ -27,6 +27,14 @@
             <div class="container-fluid px-4 px-lg-0">
                 <h1 class="fst-italic lh-1 mb-4">Crie sua Conta:</h1>
                 <p class="mb-5">Preencha os campos abaixo para criar sua conta e acessar o sistema.</p>
+                <?php if (isset($_SESSION['erro_login'])): ?>
+                    <div class="alert alert-danger" role="alert" style="max-width: 400px;">
+                        <?php 
+                            echo $_SESSION['erro_login']; 
+                            unset($_SESSION['erro_login']); // limpa pra não repetir
+                        ?>
+                    </div>
+                <?php endif; ?>
                 <form action="contas.php" method="POST">
                     <div class="mb-3"> 
                         <input type="text" class="form-control" name="nome" placeholder="Digite o seu nome de usuário">

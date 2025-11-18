@@ -3,6 +3,8 @@ session_start();
 require_once '../conexao.php';
 
 $carrinho = $_SESSION['carrinho'] ?? [];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -8,9 +8,9 @@
 
     $e_email = filter_var($usuario, FILTER_VALIDATE_EMAIL) !== false;
     
-    $_SESSION['login_tipo'] = $is_email ? 'email' : 'nome';
+    $_SESSION['login_tipo'] = $e_email ? 'email' : 'nome';
 
-    $consulta = "SELECT * FROM usuario WHERE (Nome = :usuario OR Email = :usuario) AND Senha = :senha AND Cpf = :cpf ";
+    $consulta = "SELECT * FROM usuario WHERE (Nome = :usuario OR Email = :usuario) AND Cpf = :cpf ";
     
     $stmt = $pdo->prepare($consulta);
     
@@ -33,7 +33,7 @@
 
 
     
-    if($registros == 1){
+    if($registros == 1 && password_verify($_POST['original'], $senha) ){
         $_SESSION['cpf'] = $resultado['Cpf'];
         $_SESSION['nome'] = $resultado['Nome'];
         $_SESSION['tipo'] = $resultado['Tipo_Usuario'];

@@ -30,12 +30,10 @@
     $rs = mysqli_query($con, $sql);
     if($rs){
         // Cria a sessão de login automaticamente
-        $_SESSION['usuario'] = [
-            'cpf' => $cpf,
-            'nome' => $nome,
-            'email' => $email,
-            'tipo' => $tipo
-        ];
+        $_SESSION['cpf'] = $cpf;
+        $_SESSION['nome'] = $nome;
+        $_SESSION['email'] = $email;
+        $_SESSION['tipo'] = $tipo;
 
         // Limpa os dados de cadastro da sessão
         unset($_SESSION['dados_cadastro']);
