@@ -40,7 +40,7 @@
         // Limpa os dados de cadastro da sessão
         unset($_SESSION['dados_cadastro']);
 
-        // Redireciona para a área logada
+        // Redireciona para a área de login
         header("Location: login.php");
         exit;
     } else {

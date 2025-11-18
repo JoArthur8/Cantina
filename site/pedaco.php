@@ -57,7 +57,7 @@ session_start();
 
       <nav id="navmenu" class="navmenu">
         <ul>
-            <!-- Verifica o tipo de usuário para exibir a navbar correta -->
+          <!-- Verifica o tipo de usuário para exibir a navbar correta -->
           <?php if (isset($_SESSION['tipo']) && $_SESSION['tipo'] === 'administrador'): ?>
             <!-- Navbar do ADMIN -->
             <li><a href="diretor.php">Painel</a></li>
