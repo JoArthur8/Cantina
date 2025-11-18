@@ -112,6 +112,25 @@ $carrinho = $_SESSION['carrinho'] ?? [];
 
         <button type="submit" class="btn btn-success mt-3 w-100 py-2 shadow-sm">
             Finalizar Compra
+            <?php
+
+                $Quantidade =  $item['qtd'];
+                $Pedido_Cod_pedido = $pedido['Cod_pedido'];
+                $Item_Cod_pedido = $item['Cod_item'];
+                $valor_total = $total;
+                
+            
+                $sql = "INSERT INTO item_pedido (Quantidade, Pedido_Cod_pedido, Item_Cod_pedido, valor_total) VALUES (:Quantidade, :Pedido_Cod_pedido, :Item_Cod_pedido, :valor_total)";
+                
+                $stmt = $pdo->prepare($sql);
+
+                $stmt->bindParam(':Quantidade', $Quantidade);
+                $stmt->bindParam(':Pedido_Cod_pedido', $Pedido_Cod_pedido);
+                $stmt->bindParam(':Item_Cod_pedido', $Item_Cod_pedido);
+                $stmt->bindParam(':valor_total', $valor_total);
+            
+                $stmt->execute()
+            ?>
         </button>
     </form>
 
