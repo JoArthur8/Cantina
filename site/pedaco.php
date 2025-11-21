@@ -62,6 +62,7 @@ session_start();
             <!-- Navbar do ADMIN -->
             <li><a href="diretor.php">Painel</a></li>
             <li><a href="inicio.php">Cardápio</a></li>
+            <li><a href="./carrinho.php">Carrinho</a></li>
             <li><a href="deslogar.php">Sair</a></li>
             
           <?php else: ?>
