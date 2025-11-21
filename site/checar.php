@@ -33,7 +33,7 @@
 
 
     
-    if($registros == 1 && password_verify($_POST['original'], $senha) ){
+    if($registros == 1 && password_verify($senha, $resultado['Senha']) ){
         $_SESSION['cpf'] = $resultado['Cpf'];
         $_SESSION['nome'] = $resultado['Nome'];
         $_SESSION['tipo'] = $resultado['Tipo_Usuario'];

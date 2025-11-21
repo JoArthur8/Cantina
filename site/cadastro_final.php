@@ -17,31 +17,56 @@
     $tipo = $dados['tipo'];
     $email = $dados['email'];
 
+
+
+
     // Conexão com o banco e o INSERT
     $con = mysqli_connect($host, $user, $pass, $dbname);
     if(!$con){
         die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
     }
+    
+    // Verifica duplicados por CPF ou Email
+    $stmt = mysqli_prepare($con, "SELECT CPF, Email FROM usuario WHERE CPF = ? OR Email = ? LIMIT 1");
+    mysqli_stmt_bind_param($stmt, "ss", $cpf, $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    mysqli_stmt_bind_result($stmt, $cpf_exist, $email_exist);
+    $exists = mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
 
-    // Insere os dados na tabela usuario
-    $sql = "INSERT INTO usuario (CPF, Nome, Email, Senha, Tipo_Usuario) VALUES ('$cpf', '$nome', '$email', '$senha', '$tipo')";
+    if ($exists) {
+        $msg = [];
+        if (!empty($cpf_exist)) $msg[] = "CPF já cadastrado.";
+        if (!empty($email_exist)) $msg[] = "Email já cadastrado.";
+        $_SESSION['erro_cadastro'] = implode(' ', $msg);
+        // mantém os dados para reapresentação
+        header("Location: form_cadastra.php");
+        exit;
+    }
 
-    // Executa a query e verifica se foi bem-sucedida
-    $rs = mysqli_query($con, $sql);
-    if($rs){
-        // Cria a sessão de login automaticamente
+
+    // Insere com prepared statement
+    $insert = mysqli_prepare($con, "INSERT INTO usuario (CPF, Nome, Email, Senha, Tipo_Usuario) VALUES (?, ?, ?, ?, ?)");
+    mysqli_stmt_bind_param($insert, "sssss", $cpf, $nome, $email, $senha, $tipo);
+
+    if (mysqli_stmt_execute($insert)) {
+        // auto-login opcional
         $_SESSION['cpf'] = $cpf;
         $_SESSION['nome'] = $nome;
         $_SESSION['email'] = $email;
         $_SESSION['tipo'] = $tipo;
 
-        // Limpa os dados de cadastro da sessão
         unset($_SESSION['dados_cadastro']);
-
-        // Redireciona para a área de login
+        mysqli_stmt_close($insert);
+        mysqli_close($con);
         header("Location: login.php");
         exit;
     } else {
-        echo "Erro ao cadastrar: " . mysqli_error($con);
+        $_SESSION['erro_cadastro'] = "Erro ao cadastrar: " . mysqli_error($con);
+        mysqli_stmt_close($insert);
+        mysqli_close($con);
+        header("Location: form_cadastra.php");
+        exit;
     }
 ?>
