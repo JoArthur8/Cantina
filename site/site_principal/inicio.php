@@ -73,10 +73,14 @@
                               <p class="ingredients">' . htmlspecialchars($item['Descricao']) . '</p>
                               <p class="price">R$' . number_format($item['Preco'], 2, ',', '.') . '</p>
 
-                              <form action="adicionar_carrinho.php" method="POST">
-                                <input type="hidden" name="Cod_item" value="' . (int)$item['Cod_item'] . '">
-                                <button type="submit" class="btn btn-primary">Adicionar ao carrinho</button>
-                              </form>
+                              <button type="button" class="btn btn-primary btn-add-cart"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#quantModal"
+                                      data-itemid="' . (int)$item['Cod_item'] . '"
+                                      data-itemname="' . htmlspecialchars($item['Nome'], ENT_QUOTES) . '"
+                                      data-itemprice="' . number_format($item['Preco'], 2, '.', '') . '">
+                                Adicionar ao carrinho
+                              </button>
                             </div>';
                         }
                     } else {
@@ -142,6 +146,31 @@
       </div>
     </section>
 
+    <div class="modal fade" id="quantModal" tabindex="-1" aria-labelledby="quantModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <form action="adicionar_carrinho.php" method="POST" id="modalAddForm">
+            <div class="modal-header">
+              <h5 class="modal-title" id="quantModalLabel">Adicionar ao carrinho</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              <p id="modalItemInfo"></p>
+              <input type="hidden" name="Cod_item" id="modalCodItem" value="">
+              <div class="mb-3">
+                <label for="modalQtd" class="form-label">Quantidade</label>
+                <input type="number" class="form-control" id="modalQtd" name="qtd" value="1" min="1" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Adicionar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
       <i class="bi bi-arrow-up-short"></i>
     </a>
@@ -155,6 +184,7 @@
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/modal.js"></script>
 
 </body>
 </html>

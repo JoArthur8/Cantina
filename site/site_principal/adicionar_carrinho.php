@@ -3,6 +3,7 @@
     require_once '../conexao.php';
 
     $Cod_item = intval($_POST['Cod_item']);
+    $qtd = isset($_POST['qtd']) ? max(1, intval($_POST['qtd'])) : 1;
 
     // Buscar item no banco via PDO
     $stmt = $pdo->prepare("SELECT * FROM item WHERE Cod_item = ?");
@@ -20,15 +21,15 @@
 
     // Se o item já estiver no carrinho, só aumenta a quantidade
     if (isset($_SESSION['carrinho'][$Cod_item])) {
-        $_SESSION['carrinho'][$Cod_item]['qtd']++;
+        $_SESSION['carrinho'][$Cod_item]['qtd'] += $qtd;
     } else {
         $_SESSION['carrinho'][$Cod_item] = [
             'nome' => $item['Nome'],
             'preco' => $item['Preco'],
-            'qtd' => 1
+            'qtd' => $qtd
         ];
     }
 
-    header("Location: carrinho.php");
+    header("Location: inicio.php");
     exit();
 ?>

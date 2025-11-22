@@ -42,7 +42,8 @@ session_start();
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   
-    <!-- Link nosso CSS -->
+  <!-- Link nosso CSS -->
+  <link rel="stylesheet" href="site_principal/assets/css/modal.css">
  
 </head>
 
