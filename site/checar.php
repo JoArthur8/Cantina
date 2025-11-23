@@ -16,22 +16,16 @@
     
     // Vincula os parâmetros
     $stmt->bindParam(':usuario', $usuario);
-    $stmt->bindParam(':senha', $senha);
     $stmt->bindParam(':cpf', $cpf);
 
-    
     // Executa a consulta
     $stmt->execute();
-
-    
 
     // Obtém o número de registros encontrados
     $registros = $stmt->rowCount();
     
     // Obtém o resultado
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
     
     if($registros == 1 && password_verify($senha, $resultado['Senha']) ){
         $_SESSION['cpf'] = $resultado['Cpf'];

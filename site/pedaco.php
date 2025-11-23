@@ -62,7 +62,7 @@ session_start();
           <?php if (isset($_SESSION['tipo']) && $_SESSION['tipo'] === 'administrador'): ?>
             <!-- Navbar do ADMIN -->
             <li><a href="diretor.php">Painel</a></li>
-            <li><a href="inicio.php">Cardápio</a></li>
+            <li><a href="inicio.php#menu">Cardápio</a></li>
             <li><a href="./carrinho.php">Carrinho</a></li>
             <li><a href="deslogar.php">Sair</a></li>
             

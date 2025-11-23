@@ -5,7 +5,6 @@
     $quantidade = $_POST['quantidade'];
     $descricao = $_POST['descricao'];
     $tipo = $_POST['tipo'];
-
     $pasta = "assets/img/menu/"; // Pasta onde a imagem será salva
 
     // Processa o upload da imagem
