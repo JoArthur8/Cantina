@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require_once '../conexao.php';
 
@@ -10,10 +11,47 @@ if (!isset($_SESSION['nome'])) {
 
 // Garante que o carrinho existe antes de limpar
 if (isset($_SESSION['carrinho'])) {
+  //   // Insere os dados da compra no banco de dados
+
+  //   // Puxar dados da Session pro Cpf
+  //   $Data_hora = date('d/m/Y H:i:s');
+  //   $Cpf = $_POST['cpf'];
+
+
+  //   $sql1 = "INSERT INTO pedido (Data_Hora, Usuario_Cpf) VALUES (:Data_Hora, :Usuario_Cpf)";
+
+  //   $stmt = $pdo->prepare($sql1);
+
+  //   $stmt->bindParam(':Data_hora', $Data_hora);
+  //   $stmt->bindParam(':Cpf', $Cpf);
+
+  // // Puxar dados da Session ou de carrinho.php   
+  // // carrinho.php tem valor_total, Quantidade e Cod_item
+
+  //   $Quantidade = $_POST['Quantidade'];
+  //   $Pedido_Cod_pedido = $_POST['Pedido_Cod_pedido'];
+  //   $Item_Cod_item = $_POST['Item_Cod_item'];
+  //   $valor_total = $_POST['valor_total'];
+
+
+  //   $sql2 = "INSERT INTO item_pedido (Quantidade, Pedido_Cod_pedido, Item_Cod_item, valor_total) VALUES (:Quantidade, :Pedido_Cod_pedido, :Item_Cod_item, :valor_total)";
+
+  //   $stmt = $pdo->prepare($sql2);
+
+  //   $stmt->bindParam(':Quantidade', $Quantidade);
+  //   $stmt->bindParam(':Pedido_Cod_pedido', $Pedido_Cod_pedido);
+  //   $stmt->bindParam(':Item_Cod_item', $Item_Cod_item);
+  //   $stmt->bindParam(':valor_total', $valor_total
+  // );
+
+  //   if ($stmt->execute()) {
+  //       header("location: carrinho.php");
+  //   } else {
+  //       echo "Erro ao fazer compra.";
+  //   }
+
     unset($_SESSION['carrinho']);
 }
-
-
 
 ?>
 <!DOCTYPE html>

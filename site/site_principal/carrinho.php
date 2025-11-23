@@ -4,7 +4,6 @@ require_once '../conexao.php';
 
 $carrinho = $_SESSION['carrinho'] ?? [];
 
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -72,6 +71,7 @@ $carrinho = $_SESSION['carrinho'] ?? [];
             </thead>
             <tbody>
             <?php 
+            
             $total = 0;
             foreach ($carrinho as $id => $item):
                 $subtotal = $item['preco'] * $item['qtd'];
