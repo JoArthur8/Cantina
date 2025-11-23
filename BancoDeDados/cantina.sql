@@ -79,7 +79,6 @@ INSERT INTO `item_pedido` (`Quantidade`, `Pedido_Cod_pedido`, `Item_Cod_item`, `
 CREATE TABLE `pedido` (
   `Cod_pedido` int(11) NOT NULL,
   `Data_Hora` datetime NOT NULL,
-  `Status` varchar(100) DEFAULT NULL,
   `Usuario_CPF` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -87,8 +86,8 @@ CREATE TABLE `pedido` (
 -- Despejando dados para a tabela `pedido`
 --
 
-INSERT INTO `pedido` (`Cod_pedido`, `Data_Hora`, `Status`, `Usuario_CPF`) VALUES
-(1, '0000-00-00 00:00:00', NULL, '11122233344');
+INSERT INTO `pedido` (`Cod_pedido`, `Data_Hora`, `Usuario_CPF`) VALUES
+(1, '0000-00-00 00:00:00', '11122233344');
 
 -- --------------------------------------------------------
 
