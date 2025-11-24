@@ -2,59 +2,54 @@
 session_start();
 require_once '../conexao.php';
 
-// Verifica se o usuário está logado
+// Força horário correto (já resolvido)
+date_default_timezone_set('America/Sao_Paulo');
+$pdo->exec("SET time_zone = '-03:00'");
+
+// === VERIFICAÇÕES OBRIGATÓRIAS ===
 if (!isset($_SESSION['nome'])) {
     header("Location: index.php");
     exit();
 }
 
-// Verifica se o carrinho não está vazio
 if (empty($_SESSION['carrinho'])) {
     die("Carrinho vazio.");
 }
 
-// Dados do carrinho
+// === PEGA O CPF DO USUÁRIO LOGADO (ESSA É A PARTE QUE TAVA FALTANDO FUNCIONAR 100%) ===
+if (!isset($_SESSION['cpf']) || empty(trim($_SESSION['cpf']))) {
+    die("Erro: CPF não encontrado. Faça login novamente.");
+}
+
+$Cpf = trim($_SESSION['cpf']);   // ← agora tem certeza que tem valor
+
+// === RESTO DO CÓDIGO (mantém igual, só troquei o INSERT pra usar NOW()) ===
 $carrinho = $_SESSION['carrinho'];
 
-// Dados do usuário
-$Cpf = $_SESSION['cpf']; 
-
-$Data_Hora = date('Y-m-d H:i:s');
-
-// INSERIR O PEDIDO
-$sql1 = "INSERT INTO pedido (Data_Hora, Usuario_Cpf)
-         VALUES (:Data_Hora, :Usuario_Cpf)";
-    
+// Insere o pedido com NOW() e o CPF correto
+$sql1 = "INSERT INTO pedido (Data_Hora, Usuario_Cpf) VALUES (NOW(), :Usuario_Cpf)";
 $stmt1 = $pdo->prepare($sql1);
-$stmt1->bindParam(':Data_Hora', $Data_Hora);
 $stmt1->bindParam(':Usuario_Cpf', $Cpf);
 $stmt1->execute();
 
-// ID do pedido recém criado
 $Pedido_Cod_pedido = $pdo->lastInsertId();
 
-// INSERIR ITENS DO PEDIDO
-$sql2 = "INSERT INTO item_pedido 
-        (Quantidade, Pedido_Cod_pedido, Item_Cod_item, valor_total)
+// Insere os itens (código já estava perfeito)
+$sql2 = "INSERT INTO item_pedido (Quantidade, Pedido_Cod_pedido, Item_Cod_item, valor_total)
          VALUES (:Quantidade, :Pedido_Cod_pedido, :Item_Cod_item, :valor_total)";
-
 $stmt2 = $pdo->prepare($sql2);
 
-// Loop pelos itens do carrinho
 foreach ($carrinho as $id_item => $item) {
-
-    $Quantidade = $item['qtd'];
+    $Quantidade  = $item['qtd'];
     $valor_total = $item['preco'] * $item['qtd'];
 
     $stmt2->bindParam(':Quantidade', $Quantidade);
     $stmt2->bindParam(':Pedido_Cod_pedido', $Pedido_Cod_pedido);
     $stmt2->bindParam(':Item_Cod_item', $id_item);
     $stmt2->bindParam(':valor_total', $valor_total);
-
     $stmt2->execute();
 }
 
-// Limpa o carrinho após finalizar a compra
 unset($_SESSION['carrinho']);
 ?>
 <!DOCTYPE html>

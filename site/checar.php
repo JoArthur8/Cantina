@@ -28,7 +28,7 @@
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if($registros == 1 && password_verify($senha, $resultado['Senha']) ){
-        $_SESSION['cpf'] = $resultado['Cpf'];
+        $_SESSION['cpf'] = $resultado['Cpf'] ?? $resultado['cpf'] ?? $resultado['CPF'] ?? null;
         $_SESSION['nome'] = $resultado['Nome'];
         $_SESSION['tipo'] = $resultado['Tipo_Usuario'];
 

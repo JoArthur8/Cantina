@@ -5,6 +5,7 @@
     $pass = '';
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+        $pdo->exec("SET time_zone = '-03:00'");
         // Habilita erros do PDO
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // echo "Conexão bem-sucedida!";
