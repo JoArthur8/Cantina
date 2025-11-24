@@ -124,7 +124,7 @@
             <h4 class="text-black">Guilherme Gimenes</h4>
           </div>
           <div class="col">
-            <img class="sobreimg2" src="assets/img/sem-imagem.png" alt="">
+            <img class="sobreimg2" src="assets/img/caio.jpg" alt="">
             <h4 class="text-black">Caio Oliveira</h4>
           </div>
         </div>
