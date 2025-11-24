@@ -102,6 +102,17 @@ $carrinho = $_SESSION['carrinho'] ?? [];
     </div>
 
     <!-- Pagamento -->
+        <form action="finalizar_carrinho.php" method="POST" class="mt-4">
+            <label for="forma_pagamento" class="form-label">Forma de Pagamento</label>
+            <select class="form-select shadow-sm" id="forma_pagamento" name="forma_pagamento" required>
+                <option value="">Selecione...</option>
+                <option value="cartao_credito">Cartão de Crédito</option>
+                <option value="cartao_debito">Cartão de Débito</option>
+                <option value="pix">PIX</option>
+                <option value="dinheiro">Dinheiro</option>
+        </select>
+
+
         <button type="submit" class="btn btn-success mt-3 w-100 py-2 shadow-sm">
             Finalizar Compra
         </button>
