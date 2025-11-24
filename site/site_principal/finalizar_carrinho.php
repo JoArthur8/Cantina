@@ -2,7 +2,7 @@
 session_start();
 require_once '../conexao.php';
 
-// Força horário correto (já resolvido)
+// Força horário correto
 date_default_timezone_set('America/Sao_Paulo');
 $pdo->exec("SET time_zone = '-03:00'");
 
@@ -16,14 +16,13 @@ if (empty($_SESSION['carrinho'])) {
     die("Carrinho vazio.");
 }
 
-// === PEGA O CPF DO USUÁRIO LOGADO (ESSA É A PARTE QUE TAVA FALTANDO FUNCIONAR 100%) ===
+// === PEGA O CPF DO USUÁRIO LOGADO ===
 if (!isset($_SESSION['cpf']) || empty(trim($_SESSION['cpf']))) {
     die("Erro: CPF não encontrado. Faça login novamente.");
 }
 
-$Cpf = trim($_SESSION['cpf']);   // ← agora tem certeza que tem valor
+$Cpf = trim($_SESSION['cpf']);
 
-// === RESTO DO CÓDIGO (mantém igual, só troquei o INSERT pra usar NOW()) ===
 $carrinho = $_SESSION['carrinho'];
 
 // Insere o pedido com NOW() e o CPF correto
@@ -34,7 +33,7 @@ $stmt1->execute();
 
 $Pedido_Cod_pedido = $pdo->lastInsertId();
 
-// Insere os itens (código já estava perfeito)
+// Insere os itens
 $sql2 = "INSERT INTO item_pedido (Quantidade, Pedido_Cod_pedido, Item_Cod_item, valor_total)
          VALUES (:Quantidade, :Pedido_Cod_pedido, :Item_Cod_item, :valor_total)";
 $stmt2 = $pdo->prepare($sql2);
